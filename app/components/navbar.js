@@ -13,6 +13,10 @@ export default function Navbar() {
             document.body.style.overflow="hidden"
         }
     }
+    const handleMenuItemclick=()=>{
+        console.log('ok ')
+        document.body.style.overflow="auto"
+    }
     return (
         <>
             <div className="bg-primary desktop hidden md:block">
@@ -21,11 +25,11 @@ export default function Navbar() {
                         <Link href={"/"} className="font-bold font-primary inline-block border border-white text-center px-2"><span className="text-2xl text-secondary">B</span>OW FISHING<br></br> <span className="text-2xl text-secondary">X</span>TREME ADVENTURES<br></br> </Link>
                     </div>
                     <div className="flex font-sec text-md gap-x-6">
-                        <Link href="/fishing-charters" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4">FISHING CHARTERS</Link>
-                        <Link href="/about-us" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4">ABOUT US</Link>
-                        <Link href="/rentals" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4">RENTALS</Link>
-                        <Link href="/pricing" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4">PRICING</Link>
-                        <Link href="/#faq" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4">FAQ</Link>
+                        <Link href="/fishing-charters" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4" onClick={handleMenuItemclick}>FISHING CHARTERS</Link>
+                        <Link href="/about-us" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4" onClick={handleMenuItemclick}>ABOUT US</Link>
+                        <Link href="/rentals" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4" onClick={handleMenuItemclick}>RENTALS</Link>
+                        <Link href="/pricing" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4" onClick={handleMenuItemclick}>PRICING</Link>
+                        <Link href="/#faq" className="hover:text-secondary duration-200 transition-all hover:underline hover:underline-offset-4" onClick={handleMenuItemclick}>FAQ</Link>
                     </div>
                     <div className="bg-secondary py-2 px-4 text-xs rounded-sm hover:shadow-sm hover:shadow-teal-200 text-center cursor-pointer">
                         <a href="#" className="text-primary font-bold font-sec text-lg">LETS GO FISHING</a>
@@ -48,10 +52,10 @@ export default function Navbar() {
                 <div className={`z-50 overlay ${isOpen ? 'w-full':'w-0'} bg-teal-300 absolute h-full top-0 opacity-45 duration-300 transition-all ease-in`} onClick={handleMenuClick}></div>
                 <div className={`z-50 ${isOpen ? 'w-[80%]':'w-0'} absolute h-full bg-primary top-0 overflow-hidden ${isOpen ? 'duration-300':'duration-150'}  transition-all ease-in`}>
                     <div className='z-50 flex flex-col px-4 py-5 gap-y-8 text-lg font-sec text-white whitespace-nowrap'>
-                        <Link href={'/fishing-charters'} className=''>FISHING CHARTERS</Link>
-                        <Link href={'about-us'} className=''>ABOUT US</Link>
-                        <Link href={'rentals'} className=''>RENTALS</Link>
-                        <Link href={'/#faq'} className=''>FAQS</Link>
+                        <Link href={'/fishing-charters'} className='' onClick={handleMenuItemclick}>FISHING CHARTERS</Link>
+                        <Link href={'about-us'} className='' onClick={handleMenuItemclick}>ABOUT US</Link>
+                        <Link href={'rentals'} className='' onClick={handleMenuItemclick}>RENTALS</Link>
+                        <Link href={'/#faq'} className='' onClick={handleMenuItemclick}>FAQS</Link>
                     </div>
                 </div>
             </div>
